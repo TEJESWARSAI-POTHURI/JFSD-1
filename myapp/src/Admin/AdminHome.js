@@ -1,5 +1,7 @@
 import React from 'react';
-import './AdminHome.css'; // Make sure to create this file for styling
+import { Link, Route, Routes } from 'react-router-dom'; // Import Link, Routes, and Route
+import AddEvent from './AddEvent'; // Import AddEvent component
+import './AdminHome.css'; // Ensure you have the AdminHome.css file for styling
 
 function AdminHome() {
   return (
@@ -8,7 +10,9 @@ function AdminHome() {
       <nav className="navbar">
         <div className="navbar-logo">Admin Panel</div>
         <ul className="navbar-menu">
-          <li><a href="#events">Events</a></li>
+          <li><a href="/addevent">Events</a></li>
+
+      
         </ul>
         <div className="navbar-avatar">
           <img
@@ -21,8 +25,6 @@ function AdminHome() {
 
       {/* Content Section */}
       <div className="content">
-        <h1>Welcome to Admin Home Page</h1>
-        <p>Here you can manage all the events and other admin functionalities.</p>
       </div>
     </div>
   );
