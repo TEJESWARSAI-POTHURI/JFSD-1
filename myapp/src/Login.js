@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Login.css'; // Import the CSS file
 
-function Login() {
+function Login({ setIsAuthenticated }) { // Accept setIsAuthenticated as a prop
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Create navigate instance
@@ -12,8 +12,10 @@ function Login() {
 
     // Simple login logic
     if (username === 'admin' && password === 'adminpass') {
+      setIsAuthenticated(); // Set user as authenticated
       navigate('/adminhome'); // Redirect to Admin page
     } else if (username === 'user' && password === 'userpass') {
+      setIsAuthenticated(); // Set user as authenticated
       navigate('/userhome'); // Redirect to User page
     } else {
       alert('Invalid credentials');
