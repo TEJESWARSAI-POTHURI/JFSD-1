@@ -1,20 +1,20 @@
 import './App.css';
 import AdminHome from './Admin/AdminHome';
-import UserHome from './User/UserHome';
-
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UserHome from './User/UserHome'; // Imported but not used yet
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-
-   <Router>
-    <Routes>
-      <Route path="adminhome" element ={AdminHome}></Route>
-      <Route path="userhome"  element={UserHome}></Route>
-    </Routes>
-
-   </Router>
+    <BrowserRouter>
+      <div>
+      
+        <Routes>
+        <Route path="/" element={<h2>Hello, This is done by Tej</h2>} />
+          <Route path='/userhome'element={<UserHome />} />
+          <Route path="/adminhome" element={<AdminHome />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
