@@ -1,84 +1,76 @@
 import React, { useState } from 'react';
-import './AddEvent.css'
 
-function App() {
-  // State to hold form input values
+function AddEvent({ addEvent }) {
   const [eventName, setEventName] = useState('');
   const [eventDate, setEventDate] = useState('');
   const [genre, setGenre] = useState('');
   const [points, setPoints] = useState('');
   const [uses, setUses] = useState('');
 
-  // Handler function for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Process form submission logic here
-    console.log({
+    const newEvent = {
       eventName,
       eventDate,
       genre,
       points,
       uses,
-    });
+    };
+    addEvent(newEvent); // Call the function to add event to the global state
+    setEventName('');
+    setEventDate('');
+    setGenre('');
+    setPoints('');
+    setUses('');
   };
 
   return (
-    <div className="App">
-      <h1>Add Event</h1>
+    <div>
+      <h2>Add Event</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
-            Event Name:
-            <input
-              type="text"
-              value={eventName}
-              onChange={(e) => setEventName(e.target.value)}
-              required
-            />
-          </label>
+          <label>Event Name:</label>
+          <input
+            type="text"
+            value={eventName}
+            onChange={(e) => setEventName(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>
-            Event Date:
-            <input
-              type="date"
-              value={eventDate}
-              onChange={(e) => setEventDate(e.target.value)}
-              required
-            />
-          </label>
+          <label>Event Date:</label>
+          <input
+            type="date"
+            value={eventDate}
+            onChange={(e) => setEventDate(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>
-            Genre:
-            <input
-              type="text"
-              value={genre}
-              onChange={(e) => setGenre(e.target.value)}
-              required
-            />
-          </label>
+          <label>Genre:</label>
+          <input
+            type="text"
+            value={genre}
+            onChange={(e) => setGenre(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>
-            Points Gained:
-            <input
-              type="number"
-              value={points}
-              onChange={(e) => setPoints(e.target.value)}
-              required
-            />
-          </label>
+          <label>Points:</label>
+          <input
+            type="number"
+            value={points}
+            onChange={(e) => setPoints(e.target.value)}
+            required
+          />
         </div>
         <div>
-          <label>
-            Uses of the Event:
-            <textarea
-              value={uses}
-              onChange={(e) => setUses(e.target.value)}
-              required
-            />
-          </label>
+          <label>Uses:</label>
+          <textarea
+            value={uses}
+            onChange={(e) => setUses(e.target.value)}
+            required
+          />
         </div>
         <button type="submit">Add Event</button>
       </form>
@@ -86,4 +78,4 @@ function App() {
   );
 }
 
-export default App;
+export default AddEvent;

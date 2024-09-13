@@ -1,19 +1,22 @@
 import './App.css';
 import AdminHome from './Admin/AdminHome';
 import UserHome from './User/UserHome';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import AddEvent from './Admin/AddEvent';
-import Login from './Login';
+import ViewEvents from './Admin/ViewEvents'; // Admin's View Events page
+import UserViewEvents from './User/UserViewEvents'; // User's View Events page
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Login from './Login';
+import ViewAppliedStudents from './Admin/ViewAppliedStudents';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem('isAuthenticated') === 'true'
   );
   const [role, setRole] = useState(localStorage.getItem('role') || '');
+  const [events, setEvents] = useState([]); // Global state for events
 
   useEffect(() => {
-    // Sync authentication and role state with local storage
     const authStatus = localStorage.getItem('isAuthenticated') === 'true';
     const userRole = localStorage.getItem('role');
     setIsAuthenticated(authStatus);
@@ -32,6 +35,11 @@ function App() {
     setRole('');
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('role');
+  };
+
+  // Function to add an event
+  const addEvent = (newEvent) => {
+    setEvents((prevEvents) => [...prevEvents, newEvent]);
   };
 
   return (
@@ -54,7 +62,27 @@ function App() {
             path="/addevent"
             element={
               isAuthenticated && role === 'admin' ? (
-                <AddEvent />
+                <AddEvent addEvent={addEvent} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+           <Route
+            path="/viewappliedstudents"
+            element={
+              isAuthenticated && role === 'admin' ? (
+                <ViewAppliedStudents events={events} />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/viewevents"
+            element={
+              isAuthenticated && role === 'admin' ? (
+                <ViewEvents events={events} />
               ) : (
                 <Navigate to="/" />
               )
@@ -66,6 +94,16 @@ function App() {
             element={
               isAuthenticated && role === 'user' ? (
                 <UserHome />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+          <Route
+            path="/userviewevents"
+            element={
+              isAuthenticated && role === 'user' ? (
+                <UserViewEvents events={events} />
               ) : (
                 <Navigate to="/" />
               )
