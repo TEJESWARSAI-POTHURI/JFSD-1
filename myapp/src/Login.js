@@ -10,12 +10,12 @@ function Login({ setIsAuthenticated }) { // Accept setIsAuthenticated as a prop
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simple login logic
+    // Simple login logic with role differentiation
     if (username === 'admin' && password === 'adminpass') {
-      setIsAuthenticated(); // Set user as authenticated
+      setIsAuthenticated('admin'); // Set user as authenticated with admin role
       navigate('/adminhome'); // Redirect to Admin page
     } else if (username === 'user' && password === 'userpass') {
-      setIsAuthenticated(); // Set user as authenticated
+      setIsAuthenticated('user'); // Set user as authenticated with user role
       navigate('/userhome'); // Redirect to User page
     } else {
       alert('Invalid credentials');
