@@ -30,12 +30,6 @@ function App() {
     localStorage.setItem('role', userRole);
   };
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setRole('');
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('role');
-  };
 
   // Function to add an event
   const addEvent = (newEvent) => {

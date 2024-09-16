@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddEvent.css'; // Import the CSS file
 
 function AddEvent({ addEvent }) {
   const [eventName, setEventName] = useState('');
@@ -25,7 +26,7 @@ function AddEvent({ addEvent }) {
   };
 
   return (
-    <div>
+    <div className="add-event-container">
       <h2>Add Event</h2>
       <form onSubmit={handleSubmit}>
         <div>
