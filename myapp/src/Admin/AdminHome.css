@@ -1,39 +1,55 @@
-.admin-home {
-    font-family: Arial, sans-serif;
-  }
-  
-  .navbar {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px; /* Reduced padding */
+  background-color: #5a9fc2;
+  color: white;
+}
+
+.navbar-logo {
+  font-size: 1.2rem; /* Slightly smaller font size */
+  font-weight: bold;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 50px; /* Reduced gap between menu items */
+}
+
+.navbar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem; /* Slightly smaller font size */
+}
+
+.navbar-avatar {
+  display: flex;.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 20px; /* Adjust the padding */
+    height: 100px; /* Set a fixed height */
     background-color: #5a9fc2;
     color: white;
   }
   
   .navbar-logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Optionally reduce font size */
     font-weight: bold;
   }
   
   .navbar-menu {
     list-style: none;
     display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-menu li {
-    display: inline;
+    gap: 15px;
   }
   
   .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-  }
-  
-  .navbar-menu a:hover {
-    text-decoration: underline;
+    font-size: 1rem; /* Optionally reduce font size */
   }
   
   .navbar-avatar {
@@ -42,22 +58,78 @@
   }
   
   .avatar {
-    width: 40px;
-    height: 40px;
+    width: 35px; /* Optionally reduce avatar size */
+    height: 35px;
     border-radius: 50%;
   }
   
-  /* Content Section */
-  .content {
-    padding: 20px;
-  }
-  
-  .content h1 {
-    font-size: 2rem;
-  }
-  
-  .content p {
-    font-size: 1.1rem;
-    color: #555;
-  }
-  
+  align-items: center;
+}
+
+.avatar {
+  width: 35px; /* Reduced size of the avatar */
+  height: 35px;
+  border-radius: 50%;
+}
+/* General content styling */
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Feature cards styling */
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5a9fc2;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #4885a6;
+}

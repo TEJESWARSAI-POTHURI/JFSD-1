@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import UserViewEvents from '../User/UserViewEvents';
-
+import AddEvent from '../Admin/AddEvent';
 export const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
@@ -12,7 +12,7 @@ export const EventProvider = ({ children }) => {
 
   return (
     <EventContext.Provider value={{ events, addEvent }}>
-    <addEvent></addEvent>
+   <AddEvent></AddEvent>
     <UserViewEvents></UserViewEvents>
     </EventContext.Provider>
   );
