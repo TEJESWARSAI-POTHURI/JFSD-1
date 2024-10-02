@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom'; // Import Link, Routes, and Route
-import AddEvent from './AddEvent'; // Import AddEvent component
+import { Link } from 'react-router-dom'; // Import Link, Routes, and Route
+ // Import AddEvent component
 import './AdminHome.css'; // Ensure you have the AdminHome.css file for styling
 
 function AdminHome() {

@@ -25,12 +25,13 @@ function Login({ setIsAuthenticated }) { // Accept setIsAuthenticated as a prop
   return (
     <div className="login-container">
       <h2>Login</h2>
+    
+      <form onSubmit={handleSubmit}>
       <img
         src="https://th.bing.com/th/id/OIP.HfXtvnZ8YoT0b3elURJaKgHaHx?rs=1&pid=ImgDetMain"
         alt="Avatar"
         className="avatar"
       />
-      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username</label>
           <input

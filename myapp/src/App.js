@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Login from './Login';
 import ViewAppliedStudents from './Admin/ViewAppliedStudents';
+import EventManager from './EventManager/EventManager';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -52,6 +53,7 @@ function App() {
               )
             }
           />
+          <Route path="/events" component={EventManager} />
           <Route
             path="/addevent"
             element={
