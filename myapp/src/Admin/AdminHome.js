@@ -15,6 +15,9 @@ function AdminHome() {
           <strong><li><a href='/viewappliedstudents'>View Students</a></li></strong>
         </ul>
         <div className="navbar-avatar">
+          <div className='navbar-menu'>
+          <strong><li><a href='/'>LogOut</a></li></strong>
+          </div>
           <img
             src="https://th.bing.com/th/id/OIP.HfXtvnZ8YoT0b3elURJaKgHaHx?rs=1&pid=ImgDetMain"
             alt="Avatar"
